@@ -20,20 +20,31 @@ else:
       print(f' El mensaje encriptado es: {msj_encriptado}')
 
 # Ejercicio 2
-n = int(input('Ingresa un numero entero positivo: '))
-num_str = str(n)
-par_count = 0
-impar_count = 0
+digitos_pares_totales = 0
+digitos_impares_totales = 0
 
-for char in num_str:
-    digit = int(char)
-    resto = digit % 2
-    if resto == 0:
-        print(f'El dígito {digit} es par.')
-        par_count += 1
-    else:
-        print(f'El dígito {digit} es impar.')
-        impar_count += 1
+while True:
+    num = int(input("Ingresa un número entero positivo (ingresa 0 para terminar): "))
+    
+    if num == 0:
+        break
+    
+    pares = 0
+    impares = 0
+    numero = num
+    
+    while numero > 0:
+        digito = numero % 10
+        if digito % 2 == 0:
+            pares += 1
+        else:
+            impares += 1
+        numero //= 10
+    
+    digitos_pares_totales += pares
+    digitos_impares_totales += impares
+    
+    print(f"El número {num} tiene {pares} dígitos pares y {impares} dígitos impares.")
 
-print(f'En el número {n}, hay {par_count} dígitos pares y {impar_count} dígitos impares.')
-
+print(f"Total de dígitos pares: {digitos_pares_totales}")
+print(f"Total de dígitos impares: {digitos_impares_totales}")
