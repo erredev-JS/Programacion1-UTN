@@ -1,30 +1,24 @@
-import random as r # Importo la libreria random como "r" para poder usarla en el programa
+# Ejercicio 12
+precios_frutas = {
+    'manzana': 1.5,  # Precio por kilo de manzana
+    'banana': 2.0,   # Precio por kilo de banana
+    'pera': 1.8,     # Precio por kilo de pera
+    # Agrega más frutas y sus precios aquí
+}
 
-# Defino la lista de palabras que usará el programa.
-
-word_list = ['Computadora', 'Internet', 'Python', 'Java', 'Programación']
-
-# Guardo el numero aleatorio en una variable para facilitar la lectura del codigo y su mantenimiento.
-
-random_number = r.randrange(0,len(word_list))
-
-# Obtengo la palabra de entre word_list usando el numero aleatorio como indice.
-
-word = word_list[random_number]
-
-dash_word = ''
-for l in word:
-    dash_word += '-'
-
-game_word = ''
-tries = 0
+# Pedir al usuario que ingrese la fruta y la cantidad de kilos
+fruta = input('Ingrese el nombre de la fruta: ').lower()
+kilos = float(input('Ingrese la cantidad de kilos: '))
 
 
-word_arr = word.split()
-dash_arr = dash_word.split()
+# Verificar si la fruta está en el diccionario
+if fruta in precios_frutas:
+    # Calcular el precio total
+    precio_total = precios_frutas[fruta] * kilos
+    #resultado
+    mensaje = 'El precio de {} kilos de {} es: ${:.2f}'
+    print(mensaje.format(kilos, fruta, precio_total))
+else:
+    # Mostrar un mensaje si la fruta no está en el diccionario
+    print('Lo siento, no tenemos el precio para la fruta ingresada.')
 
-
-while tries < 3:
-    attempt = input('Ingresa una letra para que crees que está en la palabra: ')
-    if attempt != 0:
-        tries += 1
