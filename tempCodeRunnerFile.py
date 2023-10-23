@@ -1,24 +1,15 @@
-# Ejercicio 12
-precios_frutas = {
-    'manzana': 1.5,  # Precio por kilo de manzana
-    'banana': 2.0,   # Precio por kilo de banana
-    'pera': 1.8,     # Precio por kilo de pera
-    # Agrega más frutas y sus precios aquí
-}
+def insertion_sort_large(to_order):
+    for i in range(1, len(to_order)):
+        key = to_order[i]  
+        j = i - 1  
 
-# Pedir al usuario que ingrese la fruta y la cantidad de kilos
-fruta = input('Ingrese el nombre de la fruta: ').lower()
-kilos = float(input('Ingrese la cantidad de kilos: '))
+        while j >= 0 and key < to_order[j]:
+            to_order[j + 1] = to_order[j]
+            j -= 1
 
+        to_order[j + 1] = key
 
-# Verificar si la fruta está en el diccionario
-if fruta in precios_frutas:
-    # Calcular el precio total
-    precio_total = precios_frutas[fruta] * kilos
-    #resultado
-    mensaje = 'El precio de {} kilos de {} es: ${:.2f}'
-    print(mensaje.format(kilos, fruta, precio_total))
-else:
-    # Mostrar un mensaje si la fruta no está en el diccionario
-    print('Lo siento, no tenemos el precio para la fruta ingresada.')
+num_list = [5, 8, 9, 3, 1, 4, 5, 8, 7, 5, 5, 185, 5, 15, 16, 5163, 4658, 463, 516, 84]
 
+insertion_sort_large(num_list)
+print(num_list)
