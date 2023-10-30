@@ -24,11 +24,6 @@ def potencia1(n,b):
         #aca va a hacer la recursion de n restandole b hasta llegar a 0. Si llega a cero es potencia, y si no llega a cero, no es potencia.
         return potencia1(n - b, b)
 
-
-
-
-
-
 print("Bienvenido: ")
 print("Para saber si un número entero [n] es potencia de otro número entero [b]")
 n = int(input("Por favor ingrese un número entero para [n]: "))
@@ -60,9 +55,6 @@ def par(n):
     else:
         return impar(n-1)
    
-
-
-
 
 def impar(n):
     if n == 1:
