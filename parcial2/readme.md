@@ -1,6 +1,6 @@
-## Casos de prueba para el programa.
+# Casos de prueba para el programa.
 
-# Matriz mutante
+## Matriz mutante
 mutant_matrix = [
     'AAAAAA',
     'ACGTAG'                              
@@ -9,7 +9,7 @@ mutant_matrix = [
     'ATTTTT'
 ]
 
-# Matriz no mutante
+## Matriz no mutante
 
 non_mutant_matrix = [
     'ACGGCA'
